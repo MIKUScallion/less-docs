@@ -1,13 +1,16 @@
 ---
-title: Features Overview
+title: Features Overview（特性概览）
 ---
 
 > As an extension to CSS, Less is not only backwards compatible with CSS, but the extra features it adds use existing CSS syntax. This makes learning Less a breeze, and if in doubt, lets you fall back to vanilla CSS.
 
+> 作为CSS的一个扩展，Less不仅仅向后兼容CSS，而且扩展的特性是基于现有的CSS语法的。这使得学习Less变得轻而易举，如果有什么不清楚的，直接退回使用熟悉的CSS即可。
 
-### Variables
+### Variables（变量）
 
 These are pretty self-explanatory:
+
+这些是自解释的代码（很好地说明了Less的特点）：
 
 ```less
 @nice-blue: #5B83AD;
@@ -20,6 +23,8 @@ These are pretty self-explanatory:
 
 Outputs:
 
+输出：
+
 ```css
 #header {
   color: #6c94be;
@@ -28,10 +33,15 @@ Outputs:
 
 Note that variables are actually "constants" in that they can only be defined once.
 
+记住这个，Less中的变量本质上类似其他语言的常量，它们只可以被定义一次。
 
-### Mixins
+PS：这里说不通，Less中的变量可以被定义多次，而且有作用域的概念，同一个作用域中，以最后定义的那个变量为准。
+
+### Mixins（混合）
 
 Mixins are a way of including ("mixing in") a bunch of properties from one rule-set into another rule-set. So say we have the following class:
+
+混合是一种把一个规则集合中的大把内容包含到另一个规则集合的方式。假设我们有这样的一个类：
 
 ```css
 .bordered {
@@ -41,6 +51,9 @@ Mixins are a way of including ("mixing in") a bunch of properties from one rule-
 ```
 
 And we want to use these properties inside other rule-sets. Well, we just have to drop in the name of the class where we want the properties, like so:
+
+然后我们想再其他的规则集合中使用bordered类里的内容。很好，我们只需要在想要地方写上这个类的名字即可，就像这样：
+
 
 ```less
 #menu a {
@@ -55,6 +68,8 @@ And we want to use these properties inside other rule-sets. Well, we just have t
 ```
 
 The properties of the `.bordered` class will now appear in both `#menu a` and `.post a`. (Note that you can also use `#ids` as mixins.)
+
+
 
 **Learn more**
 
