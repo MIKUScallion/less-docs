@@ -41,7 +41,7 @@ PS：这里说不通，Less中的变量可以被定义多次，而且有作用�
 
 Mixins are a way of including ("mixing in") a bunch of properties from one rule-set into another rule-set. So say we have the following class:
 
-混合是一种把一个规则集合中的大把内容包含到另一个规则集合的方式。假设我们有这样的一个类：
+mixin是一种把一个规则集合中的大把内容包含到另一个规则集合的方式。假设我们有这样的一个类：
 
 ```css
 .bordered {
@@ -69,17 +69,23 @@ And we want to use these properties inside other rule-sets. Well, we just have t
 
 The properties of the `.bordered` class will now appear in both `#menu a` and `.post a`. (Note that you can also use `#ids` as mixins.)
 
+现在`.bordered`类的内容会同时出现在`#menu a`和`.post a`中。（记住这个，你可以通过类选择器或者ID选择器来使用mixin）
 
-
-**Learn more**
+**Learn more（学习更多）**
 
 * [More about mixins](#mixins-feature)
 * [Parametric Mixins](#mixins-parametric-feature)
 
 
-### Nested Rules
+* [更多关于mixins的内容](#mixins-feature)
+* [可传参的Mixins](#mixins-parametric-feature)
+
+
+### Nested Rules（嵌套规则）
 
 Less gives you the ability to use nesting instead of, or in combination with cascading. Let's say we have the following CSS:
+
+Less提供给你使用嵌套规则来代替传统的使用“,”分隔或者不断组合CSS选择器的能力。假设我们有下面这样的CSS代码：
 
 ```css
 #header {
@@ -95,6 +101,8 @@ Less gives you the ability to use nesting instead of, or in combination with cas
 
 In Less, we can also write it this way:
 
+在Less中，我们也可以用这样的方式写：
+
 ```less
 #header {
   color: black;
@@ -109,7 +117,13 @@ In Less, we can also write it this way:
 
 The resulting code is more concise, and mimics the structure of your HTML.
 
+产生的代码更简洁，而且很你的HTML代码的结构很相似。
+
 You can also bundle pseudo-selectors with your mixins using this method. Here's the classic clearfix hack, rewritten as a mixin (`&` represents the current selector parent):
+
+在这种方法中，你也可以使用伪类。这是一个经典的清楚浮动的hack，使用mixin重写了（`&`代表当前选择器的父亲）：
+
+PS：在嵌套规则中，当前选择器选择的是嵌套外类的内部元素，`&`代表当前选择器的父亲，也就是外部嵌套外类
 
 ```less
 .clearfix {
@@ -127,11 +141,15 @@ You can also bundle pseudo-selectors with your mixins using this method. Here's 
 }
 ```
 
-**See also**
+**See also（也可以看这里）**
 
 * [Parent Selectors](#parent-selectors-feature)
 
-### Nested Directives and Bubbling
+* [父类选择器](#parent-selectors-feature)
+
+
+
+### Nested Directives and Bubbling（嵌套指令与冒泡）
 
 Directives such as `media` or `keyframe` can be nested in the same way as selectors. Directive is placed on top and relative order against other elements inside the same ruleset remains unchanged. This is called bubbling.
 
