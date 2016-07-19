@@ -35,7 +35,7 @@ Note that variables are actually "constants" in that they can only be defined on
 
 记住这个，Less中的变量本质上类似其他语言的常量，它们只可以被定义一次。
 
-PS：这里说不通，Less中的变量可以被定义多次，而且有作用域的概念，同一个作用域中，以最后定义的那个变量为准。
+PS：变量在同一个作用域中只可以被定义一次
 
 ### Mixins（混合）
 
